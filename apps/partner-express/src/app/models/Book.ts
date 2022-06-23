@@ -20,4 +20,4 @@ export interface IBookModel extends IBook, Document {
 
 }
 
-export default mongoose.model<IBookModel>('Book', BookSchema); ;
+export default mongoose.model<IBookModel>('Book', BookSchema);
