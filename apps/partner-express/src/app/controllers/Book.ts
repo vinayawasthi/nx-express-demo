@@ -76,7 +76,6 @@ const getBookByAuthor = (req: Request, res: Response, next: NextFunction) => {
         .catch((error) => res.status(500).json(error));
 };
 
-
 export default {
     createBook,
     updateBook,

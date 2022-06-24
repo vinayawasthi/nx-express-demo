@@ -1,4 +1,3 @@
-//import express  from 'express';
 import express = require('express');
 import controller from '../controllers/Author';
 

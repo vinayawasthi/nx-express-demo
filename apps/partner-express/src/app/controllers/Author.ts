@@ -12,6 +12,7 @@ const createAuthor = (req: Request, res: Response, next: NextFunction) => {
         .then((author) => { res.status(201).json({ author }) })
         .catch((error) => { res.status(500).json({ error }) });
 };
+
 const updateAuthor = (req: Request, res: Response, next: NextFunction) => {
     const authorId = req.params.authorId;
     return Author.findById(authorId)
@@ -28,6 +29,7 @@ const updateAuthor = (req: Request, res: Response, next: NextFunction) => {
         })
         .catch((error) => { res.status(500).json({ error }) });
 };
+
 const deleteAuthor = (req: Request, res: Response, next: NextFunction) => {
     const authorId = req.params.authorId;
     return Author.findByIdAndDelete(authorId)
@@ -37,6 +39,7 @@ const deleteAuthor = (req: Request, res: Response, next: NextFunction) => {
         })
         .catch((error) => { res.status(500).json({ error }) });;
 };
+
 const getAuthor = (req: Request, res: Response, next: NextFunction) => {
     const authorId = req.params.authorId;
     console.log(req.params);
@@ -47,6 +50,7 @@ const getAuthor = (req: Request, res: Response, next: NextFunction) => {
         })
         .catch((error) => { res.status(500).json({ error }) });
 };
+
 const getAllAuthor = (req: Request, res: Response, next: NextFunction) => {
     return Author.find()
         .then((authors) => {
