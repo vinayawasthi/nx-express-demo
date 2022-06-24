@@ -5,7 +5,8 @@
 import config from './config/config';
 import express = require('express');
 import mongoose from 'mongoose';
-import { Logging } from './app/library/logging';
+import { Logging } from './app/library/Logging';
+import authRoutes from './app/routes/Auth';
 import authorRoutes from './app/routes/Author';
 import bookRoutes from './app/routes/Book';
 
@@ -40,6 +41,7 @@ const startServer = () => {
     next();
   });
   /* App Routes */
+  app.use(authRoutes);
   app.use(authorRoutes);
   app.use(bookRoutes);
   /* Health Check */
